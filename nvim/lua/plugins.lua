@@ -12,7 +12,19 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    "tanvirtin/monokai.nvim",
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            transparent = false,
+            styles = {
+                sidebars = "transparent",
+                floats = "transparent",
+            }
+        },
+    },
+
     {
 		"onsails/lspkind.nvim",
 		event = { "VimEnter" },
@@ -33,14 +45,6 @@ require("lazy").setup({
 	{
 		"L3MON4D3/LuaSnip",
 		version = "v2.*",
-	},
-    --neovim markdown preview
-    {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
-    },
-
+	}
 })
 

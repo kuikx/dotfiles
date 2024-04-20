@@ -106,7 +106,8 @@ window#waybar.hidden {
 }
 
 #tray {
-    background-color: rgba(16, 20, 24, 0.5);
+    background-color: #FFD9C0;
+    color: #000000;
 }
 
 #window {
